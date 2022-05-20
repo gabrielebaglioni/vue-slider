@@ -15,7 +15,7 @@
 <body>
     <div id="app">
         <div class="container">
-            <div class="items">
+            <div class="items" @mouseover="stopLoopImg()" @mouseleave="loopImg()">
 
                 <div class="item active">
                     <img :src="images[currentIndex].src " alt="">
@@ -26,7 +26,7 @@
                 </div>
 
             </div>
-            <div class="thumbs">
+            <div class="thumbs" @mouseover="stopLoopImg()" @mouseleave="loopImg()">
                 <div class="prev" @click="prevImg()"></div>
                 <div class="thumb" v-for="(img, index) in images" :class="{active : currentIndex === index}" @click="changeImg(index)">
                     <img :src="img.src" alt="">

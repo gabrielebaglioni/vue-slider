@@ -2,6 +2,7 @@ const app = new Vue({
     el: "#app",
     data: {
         currentIndex: 0,
+        idLoop: null,
         images: [{
                 src: 'img/01.jpg',
                 title: 'Svezia',
@@ -46,6 +47,23 @@ const app = new Vue({
         },
         changeImg(index) {
             this.currentIndex = index;
+        },
+        loopImg() {
+            this.idLoop = setInterval(() => {
+                this.nextImg()
+            }, 2000)
+        },
+        stopLoopImg() {
+            clearInterval(this.idLoop)
         }
+
+    },
+    mounted() {
+        // setInterval(() => {
+        //         this.nextImg()
+        //     }, 2000)
+        this.loopImg();
     }
+
+
 });
