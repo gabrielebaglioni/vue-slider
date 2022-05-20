@@ -18,7 +18,7 @@
             <div class="items">
 
                 <div class="item active">
-                    <img :src="images[0].src " alt="">
+                    <img :src="images[currentIndex].src " alt="">
                     <div class="text">
                         <h3>Lorem</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.</p>
@@ -27,13 +27,13 @@
 
             </div>
             <div class="thumbs">
-                <div class="prev"></div>
+                <div class="prev" @click="prevImg()"></div>
                 <div class="thumb" v-for="img in images">
                     <img :src="img.src" alt="">
                 </div>
 
 
-                <div cl ass="next"></div>
+                <div class="next" @click="nextImg()"></div>
             </div>
         </div>
     </div>
